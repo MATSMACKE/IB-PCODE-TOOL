@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    background: #232222;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+.body {
+    display: flex;
+    flex-grow: 1;
+}
+.header {
+    background-color: #353333;
+}
+.editor {
+    width: 50%;
+    height: 100%;
+    margin: 0;
+
+}
+.runner {
+    float: right;
+    width: 50%;
+    padding-left: 20px;
+}
+
+.outputLine {
+    font-family: monospace;
+    color: white;
+    padding-top: 3px;
+    margin: 0;
+}
+
+.error {
+    font-family: monospace;
+    color: #FF5555;
+}
+
+#run {
+    margin: 10px;
+    height: 40px;
+    width: 80px;
+    font-size: 15pt;
+    font-family: monospace;
+    background-color: #407447;
+    border: solid;
+    border-radius: 5px;
+    border-color: #666666;
+    border-width: 1px;
+    color: #EEE;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

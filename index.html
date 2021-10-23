@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IB Pseudocode Tool</title>
+    <link rel="stylesheet" href="codemirror.css">
+    <link rel="stylesheet" href="pastel-on-dark.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <script src="codemirror.js"></script>
+    <script src="mode/simple.js"></script>
+    <script src="mode/syntaxhighlight.js"></script>
+
+    <div class="header">
+        <button id="run" onclick="runCode()">Run</button>
+    </div>
+    <div class="body">
+        <div class="editor"></div>
+        <div class="runner"></div>
+    </div>
+
+    <script src="compiler.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
