@@ -123,6 +123,8 @@ function translate(line) {
     }
     if (first == "input") {
         line = line.replace(/input /, "input(") + ")"
+    } else {
+        line = line.replace(/input /, "input(") + ")"
     }
     if (first == "method") {
         line = line.replace(/method/, "function") + "{";
