@@ -7,7 +7,6 @@ function translate(line) {
 
     line = line.replace(/NOT/g, "!");
     line = line.replace(/<>/g, "!=");
-    line = line.replace(/ = /g, " == ");
 
     line = line.replace(/ then/, ") {")
 
@@ -53,6 +52,7 @@ function translate(line) {
         }
     }
     if (first == "if" || first == "else if") {
+        line = line.replace(/ = /g, " == ");
         line = line.replace("if ", "if (");
         if (first == "else if") {
             line = line.replace("else if", "} \nelse if");
