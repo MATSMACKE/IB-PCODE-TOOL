@@ -22,7 +22,9 @@ function error(errorCode) {
 }
 
 function input(text) {
-    return prompt(text, "Input")
+    let inputted = prompt(text, "Input")
+    output('Inputted: ' + inputted)
+    return inputted
 }
 
 function runCode() {
@@ -39,3 +41,7 @@ function runCode() {
 
     codeToRun()
 }
+
+document.querySelector("#run").addEventListener("click", function () {
+    runCode()
+}, {passive: true})
