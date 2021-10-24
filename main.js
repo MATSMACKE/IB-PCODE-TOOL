@@ -7,9 +7,12 @@ const codeEditor = CodeMirror(document.querySelector(".editor"), {
 
 codeEditor.setSize("100%", "100%")
 
-function output(toOutput) {
+function output() {
     let element = document.createElement("p")
-    element.innerHTML = toOutput
+    element.innerHTML = ""
+    for (let i = 0; i < arguments.length; i++) {
+        element.innerHTML = element.innerHTML + arguments[i]
+    }
     element.setAttribute("class", "outputLine")
     document.querySelector(".runner").appendChild(element)
 }
@@ -22,16 +25,17 @@ function error(errorCode) {
 }
 
 function input(text) {
-    let inputted = prompt(text, "Input")
+    let inputted = prompt(text, "")
+    inputted = Number.isNaN(Number(inputted)) ? inputted : Number(inputted)
     output('Inputted: ' + inputted)
     return inputted
 }
 
 function runCode() {
+    document.querySelector(".runner").innerHTML = ""
     let compiledCode = compile(codeEditor.getValue())
 
     if (compiledCode === false) {
-        console.log("VALUE");
         return
     }
 
