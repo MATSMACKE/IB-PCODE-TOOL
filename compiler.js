@@ -22,7 +22,7 @@ function translate(line) {
     else if (line.startsWith("else")) {
         first = "else";
     } 
-    else if (line.startsWith("loop for")) {
+    else if (line.startsWith("loop while")) {
         first = "loop while";
     } 
     else if (line.startsWith("loop for")) {
