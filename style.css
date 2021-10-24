@@ -10,13 +10,14 @@ body {
     flex-grow: 1;
 }
 .header {
-    background-color: #353333;
+    background-color: #302f2f;
 }
 .editor {
-    width: 50%;
+    width: 75vw;
     height: 100%;
     margin: 0;
-
+    border-right: 4px solid #302f2f;
+    padding-right: 0px;
 }
 .runner {
     float: right;
@@ -38,16 +39,17 @@ body {
 
 #run {
     margin: 10px;
-    height: 40px;
+    padding: 10px;
+    padding-top: 8px;
     width: 80px;
     font-size: 15pt;
     font-family: monospace;
-    background-color: #407447;
+    background-color: #48b457;
     border: solid;
     border-radius: 5px;
-    border-color: #666666;
-    border-width: 1px;
-    color: #EEE;
+    border-color: #333333;
+    border-width: 2px;
+    color: rgb(34, 34, 34);
     cursor: pointer;
     display: block;
     margin-left: auto;
