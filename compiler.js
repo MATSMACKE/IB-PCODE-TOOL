@@ -122,7 +122,7 @@ function translate(line) {
         line = line.replace(/output /, "output(") + ")"
     }
     if (first == "input") {
-        line = line.replace(/input /, "input('") + "')"
+        line = line.split(" ")[1] + " = " + line.replace(/input /, "input('") + "')"
     }
     if (first == "method") {
         line = line.replace(/method/, "function") + "{";
