@@ -11,6 +11,7 @@ body {
 }
 .header {
     background-color: #302f2f;
+    display: flex;
 }
 .editor {
     width: 75vw;
@@ -37,24 +38,36 @@ body {
     color: #FF5555;
 }
 
-#run {
+button {
     margin: 10px;
     padding: 10px;
     padding-top: 8px;
-    width: 80px;
     font-size: 15pt;
     font-family: monospace;
     border: solid;
     border-radius: 5px;
     border-width: 2px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-family: monospace;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#run {
+    width: 80px;
     color: #48b457;
     background-color: rgb(34, 34, 34);
     border-color: #66A968;
-    cursor: pointer;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    transition: all 0.15s;
 }
 
 #run:hover {
@@ -63,4 +76,19 @@ body {
     background-color: #48b457;
     color: rgb(34, 34, 34);
     border-color: #48b457;
+}
+
+#examplesURL {
+    text-decoration: none;
+    border-color: gray;
+    background-color: rgb(34, 34, 34);
+    transition: all 0.15s;
+    color: gray;
+}
+
+#examplesURL:hover {
+    background-color: white;
+    color: rgb(34, 34, 34);
+    border-color: white;
+    transition: all 0.15s;
 }
