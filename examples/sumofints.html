@@ -23,12 +23,15 @@
     <script src="../compiler2.js"></script>
     <script src="../main.js"></script>
     <script>
-        codeEditor.setValue(`// OUTPUT A LIST OF INTEGERS
+        codeEditor.setValue(`// OUTPUT THE SUM OF INTEGERS
 
 NUMOFINTS = input("How many integers?")
+SUM = 0
 loop INT from 1 to NUMOFINTS
-	output INT
-end loop`)
+	SUM = SUM + INT
+end loop
+
+output "The sum of the first ", NUMOFINTS, " integers is ", SUM`)
     </script>
 </body>
 </html>
