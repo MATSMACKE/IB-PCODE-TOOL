@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IB Pseudocode Tool</title>
+    <link rel="stylesheet" href="../codemirror.css">
+    <link rel="stylesheet" href="../pastel-on-dark.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../codemirror.js"></script>
+    <script src="../mode/simple.js"></script>
+    <script src="../mode/syntaxhighlight.js"></script>
+
+    <div class="header">
+        <button id="examplesURL" onclick="window.location = `index.html`">Back To Examples</button>
+        <button id="run">Run</button>
+    </div>
+    <div class="body">
+        <div class="editor"></div>
+        <div class="runner"></div>
+    </div>
+
+    <script src="../compiler2.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        codeEditor.setValue(`// OPERATORS
+
+output " ========== ARITHMETIC OPERATORS ==========="
+output "Addition: 10 + 3 = ", 10 + 3
+output "Subtraction: 10 - 3 = ", 10 - 3
+output "Multiplication: 10 * 3 = ", 10 * 3
+output "Division: 10 / 3 = ", 10 / 3
+output "Division without remainder: 10 div 3 = ", 10 div 3
+output "Remainder: 10 mod 3 = ", 10 mod 3
+output " =========== LOGICAL OPERATORS ============="
+output "AND: true AND true = ", true AND true
+output "OR: true OR false = ", true OR false
+output "NOT: NOT false = ", NOT false`)
+    </script>
+</body>
+</html>
