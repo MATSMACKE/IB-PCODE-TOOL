@@ -44,14 +44,23 @@ body {
     width: 80px;
     font-size: 15pt;
     font-family: monospace;
-    background-color: #48b457;
     border: solid;
     border-radius: 5px;
-    border-color: #333333;
     border-width: 2px;
-    color: rgb(34, 34, 34);
+    color: #48b457;
+    background-color: rgb(34, 34, 34);
+    border-color: #66A968;
     cursor: pointer;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    transition: all 0.15s;
+}
+
+#run:hover {
+    border-color: white;
+    transition: all 0.15s;
+    background-color: #48b457;
+    color: rgb(34, 34, 34);
+    border-color: #48b457;
 }
