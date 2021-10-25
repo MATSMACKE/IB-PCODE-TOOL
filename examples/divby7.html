@@ -23,12 +23,18 @@
     <script src="../compiler2.js"></script>
     <script src="../main.js"></script>
     <script>
-        codeEditor.setValue(`// OUTPUT A LIST OF INTEGERS
+        codeEditor.setValue(`method divBy7(INPUTNUMS)
+	DIVNUMS = []
+    loop I from 1 to INPUTNUMS.length
+    	if INPUTNUMS[I] % 7 = 0 then
+        	DIVNUMS.push(INPUTNUMS[I])
+        end if
+    end loop
+    return DIVNUMS
+end method
 
-NUMOFINTS = input("How many integers?")
-loop INT from 1 to NUMOFINTS
-	output INT
-end loop`)
+NUMS = [2, 8, 13, 14, 19, 21, 34, 35]
+output divBy7(NUMS)`)
     </script>
 </body>
 </html>

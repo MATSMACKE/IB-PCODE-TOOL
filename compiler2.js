@@ -74,7 +74,7 @@ function extractStrings(code) {
             }
 
         }
-        else if (code[i] == 'd' && code[i + 1] == 'i' && code[i + 2] == 'v') {
+        else if (code[i] == 'd' && code[i + 1] == 'i' && code[i + 2] == 'v' && code[i + 3] == ' ') {
             inDiv = true
             program.push("/")
             i += 2
@@ -112,10 +112,11 @@ function checkVariables(expression, lineNum) {
     if (/\w+\(.*\)/.test(expression)) {
         return true
     }
-	let vars = expression.replace(/[^a-z0-9\s]/gi, " ").trim().split(/\s/)
+	let vars = expression.replace(/[^a-z0-9\s.]/gi, " ").trim().split(/\s/)
 
 
 	for (variable in vars) {
+		vars[variable] = vars[variable].replace(/\.\w+[\)(\(.*\))]?/gi, "")
 		if (vars[variable] != `""` && vars[variable].match(/[0-9]+/) != vars[variable] && vars[variable] != "" && vars[variable] != " " && vars[variable] != "true" && vars[variable] != "false") {
 			let validVariable = false
 			let scopeIterator = scope
@@ -130,6 +131,7 @@ function checkVariables(expression, lineNum) {
 			}
 			
 			if (!validVariable) {
+				output(vars)
 				error(`Variable ${vars[variable]} is not defined on line ${lineNum}`)
 				return false
 			}
@@ -240,6 +242,9 @@ function translateLine(line, lineNum) {
 
     else if (line.startsWith("method ")) {
         line = line.replace(/method /, "function ") + "{"
+		scope++
+		variables[scope] = []
+		variables[scope].push(line.match(/\(\w*\)/)[0].replace("(", "").replace(")", ""))
         stack.push("method")
     }
     else if (line.startsWith("return ")) {
