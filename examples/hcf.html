@@ -23,12 +23,19 @@
     <script src="../compiler2.js"></script>
     <script src="../main.js"></script>
     <script>
-        codeEditor.setValue(`// OUTPUT A LIST OF INTEGERS
+        codeEditor.setValue(`// DIVISIONLESS HCF
+method hcf(X, Y)
+	loop while X <> Y
+    	if X > Y then
+        	X = X - Y
+        else
+        	Y = Y - X
+        end if
+    end loop
+    return X
+end method
 
-NUMOFINTS = input("How many integers?")
-loop INT from 1 to NUMOFINTS
-	output INT
-end loop`)
+output hcf(1001, 2541)`)
     </script>
 </body>
 </html>
