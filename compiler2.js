@@ -8,6 +8,8 @@ function operatorReplacements(code) {
 	code = code.replace(/ NOT /g, " ! ")
 	code = code.replace(/ <> /g, " != ")
 
+	code = code.replace(/\.append\(/, ".push(")
+
 	return code
 }
 
