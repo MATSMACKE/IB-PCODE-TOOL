@@ -5,7 +5,7 @@ CodeMirror.defineSimpleMode("pseudocode", {
       // groups must span the whole string in this case
       {regex: /(function)(\s+)([a-z$][\w$]*)/,
        token: ["keyword", null, "variable-2"]},
-      {regex: /(?:method|return|if|while|else|loop|until|from|then|output|input|end|to)\b/, token: "keyword"},
+      {regex: /(?:method|return|if|while|else|loop|until|from|then|output|input|end|to|Math)\b/, token: "keyword"},
       {regex: /true|false|null|undefined/, token: "atom"},
       {regex: /0x[a-f\d]+|[-+]?(?:\.\d+|\d+\.?\d*)(?:e[-+]?\d+)?/i, token: "number"},
       {regex: /\/\/.*/, token: "comment"},

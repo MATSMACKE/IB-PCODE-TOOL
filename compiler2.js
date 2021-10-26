@@ -244,7 +244,10 @@ function translateLine(line, lineNum) {
         line = line.replace(/method /, "function ") + "{"
 		scope++
 		variables[scope] = []
-		variables[scope].push(line.match(/\(\w*\)/)[0].replace("(", "").replace(")", ""))
+		if (/\(\w*\)/.test(line)) {
+			variables[scope].push(line.match(/\(\w*\)/)[0].replace("(", "").replace(")", "").replace(" ", "").split(","))
+		}
+		
         stack.push("method")
     }
     else if (line.startsWith("return ")) {

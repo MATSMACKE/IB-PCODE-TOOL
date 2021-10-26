@@ -23,12 +23,24 @@
     <script src="../compiler2.js"></script>
     <script src="../main.js"></script>
     <script>
-        codeEditor.setValue(`// OUTPUT A LIST OF INTEGERS
+        codeEditor.setValue(`// RUSSIAN PEASANT
+method peasant(X, Y)
+	Z = 0
+    
+    loop while X > 0
+    	if X mod 2 = 1 then
+        	Z = Z + Y
+        end if
+        
+        X = X div 2
+        Y = Y * 2
+	end loop  
+    return Z
+end method
 
-NUMOFINTS = input("How many integers?")
-loop INT from 1 to NUMOFINTS
-	output INT
-end loop`)
+input X
+input Y
+output peasant(X, Y)`)
     </script>
 </body>
 </html>

@@ -23,12 +23,25 @@
     <script src="../compiler2.js"></script>
     <script src="../main.js"></script>
     <script>
-        codeEditor.setValue(`// OUTPUT A LIST OF INTEGERS
+        codeEditor.setValue(`// FEVER CALCULATOR
+FEVER = 0
+TOTAL = 0
+HOUR = 0
 
-NUMOFINTS = input("How many integers?")
-loop INT from 1 to NUMOFINTS
-	output INT
-end loop`)
+loop while HOUR < 6
+	TEMP = input("Enter temperature")
+    
+    if TEMP > 37 then
+    	FEVER = FEVER + 1
+    end if
+    
+    TOTAL = TOTAL + TEMP
+    HOUR = HOUR + 1
+end loop
+
+AVERAGE = Math.round(TOTAL/HOUR, 1)
+output "Average temperature: ", AVERAGE
+output "Incident of fever: ", FEVER`)
     </script>
 </body>
 </html>
