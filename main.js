@@ -24,6 +24,10 @@ function error(errorCode) {
     document.querySelector(".runner").appendChild(element)
 }
 
+function div(x, y) {
+    return (x / y) | 0
+}
+
 function input(text) {
     let inputted = prompt(text, "")
     inputted = Number.isNaN(Number(inputted)) ? inputted : Number(inputted)
