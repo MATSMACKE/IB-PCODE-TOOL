@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IB Pseudocode Tool</title>
+    <link rel="stylesheet" href="../codemirror.css">
+    <link rel="stylesheet" href="../pastel-on-dark.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../codemirror.js"></script>
+    <script src="../mode/simple.js"></script>
+    <script src="../mode/syntaxhighlight.js"></script>
+
+    <div class="header">
+        <button class="URLButton" onclick="window.location = `index.html`">Back To Examples</button>
+        <button id="run">Run</button>
+    </div>
+    <div class="body">
+        <div class="editor"></div>
+        <div class="runner"></div>
+    </div>
+
+    <script src="../compiler2.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        codeEditor.setValue(`// Are all digits even?
+input N
+
+EVEN = true
+
+loop while (N > 0 && EVEN)
+	if N mod 2 = 1 then
+    	EVEN = false
+    end if
+    
+  	N = N div 10
+end loop
+
+output EVEN`)
+    </script>
+</body>
+</html>
