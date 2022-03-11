@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>IB Pseudocode Tool</title>
+    <link rel="stylesheet" href="../codemirror.css">
+    <link rel="stylesheet" href="../pastel-on-dark.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <script src="../codemirror.js"></script>
+    <script src="../mode/simple.js"></script>
+    <script src="../mode/syntaxhighlight.js"></script>
+
+    <div class="header">
+        <button class="URLButton" onclick="window.location = `index.html`">Back To Examples</button>
+        <button id="run">Run</button>
+    </div>
+    <div class="body">
+        <div class="editor"></div>
+        <div class="runner"></div>
+    </div>
+
+    <script src="../compiler2.js"></script>
+    <script src="../main.js"></script>
+    <script>
+        codeEditor.setValue(`// Is A a magic square?
+A = [
+    [30, 39, 48, 1, 10, 19, 28],
+    [38, 47, 7, 9, 18, 27, 29],
+    [46, 6, 8, 17, 26, 35, 37],
+    [5, 14, 16, 25, 34, 36, 45],
+    [13, 15, 24, 33, 42, 44, 4],
+    [21, 23, 32, 41, 43, 3, 12],
+    [22, 31, 40, 49, 2, 11, 20],
+]
+
+N = 6
+MAGIC = true
+SUM = 0
+loop I from 0 to N
+	SUM = SUM + A[I][I]
+end loop
+loop I from 0 to N
+	ROW_SUM = 0
+    COL_SUM = 0
+    loop J from 0 to N
+    	ROW_SUM = ROW_SUM + A[I][J]
+        COL_SUM = COL_SUM + A[J][I]
+    end loop
+    if ROW_SUM <> SUM OR COL_SUM <> SUM then
+    	MAGIC = false
+    end if
+end loop
+DIAG_SUM = 0
+loop I from 0 to N
+	DIAG_SUM = DIAG_SUM + A[I][N-I]
+end loop
+output MAGIC`)
+    </script>
+</body>
+</html>
